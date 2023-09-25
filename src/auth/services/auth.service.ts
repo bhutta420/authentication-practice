@@ -1,6 +1,5 @@
 import { JwtCustomService } from "@app/booting";
 import { Injectable } from "@nestjs/common";
-import { ConfigService } from "@nestjs/config";
 import { UserService } from "src/user/services";
 
 @Injectable()
@@ -8,7 +7,6 @@ export class AuthService {
   constructor(
     private userService: UserService,
     private jwtCustomService: JwtCustomService,
-    private configService: ConfigService,
   ) {
 
   }
@@ -20,7 +18,6 @@ export class AuthService {
     return null
   }
   async login(user){
-    console.log(this.jwtCustomService)
     const token = await this.jwtCustomService.sign({
       user_id: user.id,
     })
