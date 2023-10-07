@@ -1,30 +1,27 @@
 import { Module } from '@nestjs/common';
 import { AuthController } from './controllers';
 import { AuthService } from './services';
-import { UserService } from 'src/user/services';
-import { LocalStratergy } from './strategies';
+import { UsersService } from 'src/users';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserEntity } from '@app/database';
-import { ConfigModule } from '@nestjs/config';
-import { JwtCustomService } from '@app/booting';
+import { AuthTokenEntity, UserEntity } from '@app/database';
 import { JwtService } from '@nestjs/jwt';
+import { EncryptionsServices } from '@app/core';
 
 @Module({
   imports: [
-    ConfigModule,
     TypeOrmModule.forFeature([
       UserEntity,
+      AuthTokenEntity,
     ]),
   ],
   controllers: [
     AuthController,
   ],
   providers: [
-    JwtCustomService,
     JwtService,
     AuthService,
-    UserService,
-    LocalStratergy,
+    UsersService,
+    EncryptionsServices
   ],
 })
 export class AuthModule {}

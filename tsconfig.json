@@ -18,11 +18,17 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app/booting": [
-        "libs/booting/src"
+      "@app/app": [
+        "libs/app/src"
       ],
-      "@app/booting/*": [
-        "libs/booting/src/*"
+      "@app/app/*": [
+        "libs/app/src/*"
+      ],
+      "@app/core": [
+        "libs/core/src"
+      ],
+      "@app/core/*": [
+        "libs/core/src/*"
       ],
       "@app/database": [
         "libs/database/src"

@@ -1,0 +1,1 @@
+export * from './craete-cors-allowed-domain.dto'

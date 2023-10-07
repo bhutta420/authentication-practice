@@ -7,13 +7,13 @@
     "webpack": true
   },
   "projects": {
-    "booting": {
+    "core": {
       "type": "library",
-      "root": "libs/booting",
+      "root": "libs/core",
       "entryFile": "index",
-      "sourceRoot": "libs/booting/src",
+      "sourceRoot": "libs/core/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/booting/tsconfig.lib.json"
+        "tsConfigPath": "libs/core/tsconfig.lib.json"
       }
     },
     "database": {
